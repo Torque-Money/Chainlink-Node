@@ -1,4 +1,4 @@
-# Setup the directories
+# Setup the node directories
 NODE_PATH=nodes/
 
 for d in $NODE_PATH/*; do
