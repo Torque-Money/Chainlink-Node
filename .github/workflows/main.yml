@@ -1,23 +1,23 @@
-# name: Deploy Chainlink
+name: Deploy Chainlink
 
-# on:
-#     push:
-#         branches:
-#             - v1.0
-#     workflow_dispatch:
+on:
+    push:
+        branches:
+            - v1.0
+    workflow_dispatch:
 
-# jobs:
-#     deploy:
-#         runs-on: ubuntu-latest
-#         steps:
-#             - name: Deploy API
-#               uses: appleboy/ssh-action@v0.1.2
-#               with:
-#                   username: ${{secrets.SSH_USERNAME}}
-#                   host: ${{secrets.SSH_HOST}}
-#                   key: ${{secrets.SSH_KEY}}
-#                   script: |
-#                       cd API/
-#                       docker-compose down
-#                       git pull
-#                       bash start.sh
+jobs:
+    deploy:
+        runs-on: ubuntu-latest
+        steps:
+            - name: Deploy Chainlink
+              uses: appleboy/ssh-action@v0.1.2
+              with:
+                  username: ${{secrets.SSH_USERNAME}}
+                  host: ${{secrets.SSH_HOST}}
+                  key: ${{secrets.SSH_KEY}}
+                  script: |
+                      cd API/
+                      docker-compose down
+                      git pull
+                      bash start.sh
