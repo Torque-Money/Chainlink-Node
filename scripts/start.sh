@@ -1,10 +1,17 @@
-source .env
+# Setup the directories
+NODE_PATH=nodes/
 
-# Setup the Fantom directory
-echo $EMAIL >> nodes/fantom/.api
-echo $PASSWORD >> nodes/fantom/.api
+for d in $NODE_PATH/*; do
+  if [ -d "$d" ]; then
+    source $d/.env
 
-echo $PASSWORD >> nodes/fantom/.password
+    echo $EMAIL >> $d/.creds
+    echo $PASSWORD >> $d/.creds
+
+    echo $PASSWORD >> $d/.pass
+
+  fi
+done
 
 # Start docker compose
-docker-compose up -d
+# docker-compose up -d
