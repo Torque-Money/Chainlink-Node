@@ -9,7 +9,7 @@ services:
             - ./nodes/fantom:/chainlink
         env_file: nodes/fantom/.env
         restart: always
-        command: local n
+        command: local n -a /chainlink/.creds -p /chainlink/.pass
         environment:
             - ROOT=/chainlink
             - LOG_LEVEL=debug
