@@ -14,4 +14,4 @@ for d in $NODE_PATH/*; do
 done
 
 # Start nodes
-docker-compose up
+docker-compose up -d
