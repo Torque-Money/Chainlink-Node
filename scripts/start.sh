@@ -1,3 +1,5 @@
+#!/bin/bash
+
 # Setup the node directories
 NODE_PATH=nodes/
 
