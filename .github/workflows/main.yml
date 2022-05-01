@@ -17,7 +17,7 @@ jobs:
                   host: ${{secrets.SSH_HOST}}
                   key: ${{secrets.SSH_KEY}}
                   script: |
-                      cd API/
+                      cd Chainlink-Node/
                       docker-compose down
                       git pull
-                      bash start.sh
+                      docker-compose down
