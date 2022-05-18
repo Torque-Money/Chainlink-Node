@@ -1,5 +1,2 @@
-*.log
-*.env
-.creds
-.pass
-secret
+nodes/**/*
+!.gitkeep
