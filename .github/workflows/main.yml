@@ -1,4 +1,4 @@
-name: Deploy Chainlink
+name: Deploy Chainlink Node
 
 on:
     push:
@@ -10,7 +10,7 @@ jobs:
     deploy:
         runs-on: ubuntu-latest
         steps:
-            - name: Deploy Chainlink
+            - name: Deploy Chainlink Node
               uses: appleboy/ssh-action@v0.1.2
               with:
                   username: ${{secrets.SSH_USERNAME}}
