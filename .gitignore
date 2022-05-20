@@ -1,4 +1,5 @@
 .env
+*.tfvars
 
 nodes/**/*
 data/*

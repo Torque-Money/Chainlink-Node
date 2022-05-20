@@ -1,3 +1,6 @@
+# **** At some point we need to automate the auto whitelisting of the services using some sort of cronjob or bash script for the entrypoint of the postgres file
+# https://hub.docker.com/_/postgres
+
 version: "3"
 
 services:
@@ -12,14 +15,7 @@ services:
             - "5432"
         volumes:
             - ./data/:/var/lib/postgresql/data
-            - ./sql/:/usr/src/sql
         env_file: ./.env
-        command:
-            - /bin/bash
-            - -c
-            - |
-                docker-entrypoint.sh & 'while :; do sleep 6h & wait $${!}; psql dbname=${POSTGRES_DB} user=${POSTGRES_USER} password=${POSTGRES_PASSWORD} host=localhost -f /usr/src/sql/whitelist.sql; done'
-                sleep infinity
     chainlink-fantom:
         image: smartcontract/chainlink:1.3.0
         ports:
@@ -40,5 +36,3 @@ services:
             - DATABSE_URL=${DATABASE_URL}
         depends_on:
             - db
-
-    # **** Now how do I start the service myself manually ??? - realistically it needs to run periodically to update it as required
