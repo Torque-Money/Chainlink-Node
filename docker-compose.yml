@@ -1,6 +1,8 @@
 # **** At some point we need to automate the auto whitelisting of the services using some sort of cronjob or bash script for the entrypoint of the postgres file
 # https://hub.docker.com/_/postgres
 
+# **** What we are trying to do is register a cronjob using a bash entry script from postgres that creates a new cronjob for 1 minute and will execute our scripts
+
 version: "3"
 
 services:
