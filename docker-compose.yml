@@ -16,7 +16,7 @@ services:
             - ./scripts/on-start/:/usr/scripts/sh
             - ./scripts/sql/:/usr/scripts/sql
         env_file: ./.env
-        command: bash -c "su root /usr/scripts/sh/setup.sh && su postgres /usr/local/var/postgres"
+        command: bash -c "su root /usr/scripts/sh/setup.sh && su postgres /bin/postgres"
     chainlink-fantom:
         image: smartcontract/chainlink:1.3.0
         ports:
