@@ -1,6 +1,6 @@
 #!/bin/sh
 
 echo "Starting setup.sh..."
-echo "*       *       *       *       *       echo hello" >> /etc/crontabs/root
+echo "*       *       *       *       *       echo HELLLOOOO" >> /etc/crontabs/root
 
 crontab -l
