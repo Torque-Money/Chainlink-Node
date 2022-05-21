@@ -1,3 +1,3 @@
 #!/bin/bash
 
-echo HELLO
+touch /usr/scripts/sh/WORKED.txt
